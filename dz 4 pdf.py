@@ -72,27 +72,24 @@ for item, count in result.items():
 
 
 #4
-
+from datetime import datetime
 import datetime
 
-def vremya(k):
-
-    date_now = datetime.datetime.now()
-    date_1 = datetime.timedelta(seconds=1)
-    for i in range(1, k):
-        date_now = date_now + date_1
-        print(date_now)
-
-
-    return date_now + date_1
 
 
 
+def vremya_43(k):
+    spisoc = []
+    result = [datetime.datetime.now() + datetime.timedelta(seconds=i) for i in range(0, k)]
+    for j in range(0, len(result)):
+
+        spisoc.append(datetime.datetime.strftime(result[j], '%Y-%m-%d %H %M %S'))
+    return spisoc
 
 
 k = int(input('введите количество дат'))
-ne_spisoc_a_prosto = vremya(k)
-print(ne_spisoc_a_prosto)
+print(vremya_43(k))
+
 
 
 
