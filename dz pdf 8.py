@@ -24,9 +24,9 @@ class Circle:
             return delta_dlin
 
 
-radius_pervu = int(input('введите значение первого радиуса'))
-radius_vtory = int(input('введите значение второго радиуса'))
-print(Circle(radius_pervu,radius_vtory).delta_dlin())
+# radius_pervu = int(input('введите значение первого радиуса'))
+# radius_vtory = int(input('введите значение второго радиуса'))
+# print(Circle(radius_pervu,radius_vtory).delta_dlin())
 
 
 
@@ -43,35 +43,19 @@ print(Circle(radius_pervu,radius_vtory).delta_dlin())
 #1
 
 '''Создать род класс auto, у которого есть атрибуты: brand, age, color, mark, weight
-А также методы: move , birtday, stop. Методы move и стоп выводят сообщение на экран (move), (stop),
+А также методы: move , birthday, stop. Методы move и стоп выводят сообщение на экран (move), (stop),
 а birtday увеличивает атрибут age на 1. Атрибуты brand, age и марк являются обязательными при обьвленни обьекта.'''
 
 import time
 
-class auto:
+class Auto:
 
-    def __init__(self,  mark ,  weight,   color, brand = 'volvo', age = 35, maxload = 100):
+    def __init__(self, age,  mark , brand,    color = 'white' , weight =1500):
         self.brand = brand
         self.age = age
         self.color = color
         self.mark = mark
         self.weight = weight
-        self.maxload = maxload
-
-    def __int__(self, max_load = 100):
-        self.max_load = max_load
-
-
-    def mover(self):
-        print('attention!')
-
-
-
-    def load(self):
-        time.sleep(1)
-        print('load')
-        time.sleep(1)
-        print('load completed!')
 
 
     def move(self):
@@ -86,7 +70,7 @@ class auto:
 
 
 
-Car = auto('volvo', 'samsung', 1999)
+# Car = Auto('volvo', 'samsung', 1999)
 
 
 
@@ -100,44 +84,44 @@ Car = auto('volvo', 'samsung', 1999)
  Создать по 2 обьекта для каждого из классов car  и truck, проверитб все их методы и атрибуты    """
 
 
-class Car(auto):
-    def __init__(self,  brand, max_speed = '100'):
-        self.max_speed = max_speed
-        self.brand = brand
+class Truck(Auto):
+    def __init__(self, max_load, age,  mark, brand):
+        Auto.__init__(self, age,  mark, brand)
+        self.max_load = max_load
     def move(self):
-        super().mover()
-        print('maxspeed is', self.max_speed)
-        print(f'{self.brand} движется')
+        print('attention')
+        super().move()
+
+    def load(self):
+        time.sleep(1)
+        print('load')
+        time.sleep(1)
+        print('load completed')
 
 
-class Truck(auto):
-    def __init__(self,brand, max_speed='150', ):
+class Car(Auto):
+    def __init__(self, max_speed,age, mark , brand):
+        Auto.__init__(self,age,  mark , brand)
+
         self.max_speed = max_speed
-        self.brand = brand
-
     def move(self):
-        super().mover()
-        print('maxspeed is', self.max_speed)
-        print(f'{self.brand} движется')
+        super().move()
+        print(f'max_speed is {self.max_speed}')
 
 
 
 
 
-car1 = Car('lexus')
 
+
+truck = Truck(1500,3,'volvo','samsung')
+truck.stop()
+
+
+
+car1 = Car(120, 80, 'volvo', 'iphone' )
 car1.move()
 
 
-truck2 = Truck('ford')
 
-truck2.move()
-
-
-car1.load()
-
-truck2.load()
-
-
-car1.stop()
 
