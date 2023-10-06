@@ -61,8 +61,8 @@ class Auto:
     def move(self):
      print(f'{self.brand} движется')
 
-    def stop(self):
-        print(f'{self.brand} остановилась')
+     def stop(self):
+         print(f'{self.brand} остановилась')
 
     def birtdday(self):
         self.age = self.age + 1
