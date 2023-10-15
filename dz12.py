@@ -1,4 +1,4 @@
-# TODO создать две таблицы в базе данных и связать их
+# TODO создать две таблицы в базе данных и связать их!
 import psycopg2
 
 conn = psycopg2.connect(host = 'localhost', dbname = 'postgres', user = 'postgres', password = '12345' ,port = '5432')
