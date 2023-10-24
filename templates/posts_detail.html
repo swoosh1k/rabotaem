@@ -1,0 +1,16 @@
+{% extends  'ourebase.html' %}
+
+{% block title %}
+{{ article.title }}
+{% endblock %}
+
+{% block body %}
+<div class ='container'>
+    <h1>{{ article.title }}</h1>
+
+    <div class ="alert alert-info">
+        <h2>{{ article.text }}</h2>
+        <p><b>Дата: {{article.date.date()}}</b></p>
+    </div>
+</div>
+{% endblock %}

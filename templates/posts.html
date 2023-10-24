@@ -1,0 +1,21 @@
+{% extends  'ourebase.html' %}
+
+{% block title %}
+Все статьи на сайте
+{% endblock %}
+
+{% block body %}
+<div class ='container'>
+    <h1>Все статьи на нашем сайте</h1>
+
+    {% for element in articles %}
+    <div class ="alert alert-info">
+        <h2>{{ element.title }}</h2>
+        <p>{{element.intro}}</p>
+        <p><b>Дата: {{element.date.date()}}</b></p>
+        <a  href='/posts/{{ element.id }}' class ='btn btn-warning'>Детальнее</a>
+
+ </div>
+    {% endfor %}
+</div>
+{% endblock %}
